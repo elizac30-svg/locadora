@@ -1,1 +1,87 @@
 # Locadora de Jogos
+
+Uma locadora trabalha com jogos para diferentes plataformas, como PlayStation, Xbox e Nintendo Switch.
+Cada Jogo possui um titulo, uma plataforma, um genero e um valor de locacao por dia.
+A locadora tambem mantem o cadastro de seus Clientes. Cada cliente possui nome e telefone.
+Quando um cliente realiza uma locacao, o sistema deve registrar o jogo escolhido, a quantidade de dias
+e calcular o valor total.
+
+A locadora oferece descontos de acordo com o periodo da locacao:
+
+*Ate 3 dias:* sem desconto.
+*Acima de 3 dias:* 5% de desconto.
+*Acima de 7 dias:* 10% de desconto.
+O desconto deve ser aplicado sobre o valor total da locacao.
+
+Exemplo
+Considere um jogo cujo valor da diaria seja R$ 10,00.
+Se o cliente aluga-lo por 5 dias:
+
+*Valor sem desconto:*
+5 x R$ 10,00 = R$ 50,00
+*Desconto:*
+5% de R$ 50,00 = R$ 2,50
+
+*Valor final:*
+R$ 47,50
+
+-Requisitos
+
+Desenvolva uma aplicacao em Python que permita:
+
+Cadastrar jogos.
+Listar os jogos cadastrados.
+Cadastrar clientes.
+Listar os clientes cadastrados.
+Realizar uma locacao.
+Calcular automaticamente o desconto e o valor final.
+Listar as locacoes realizadas.
+O programa deve utilizar:
+
+Funcoes;
+Parametros;
+Listas;
+Dicionarios;
+Estruturas de decisao;
+Estruturas de repeticao;
+Arquivos JSON;
+Organizacao do programa em mais de um arquivo.
+Persistencia dos dados
+
+Os dados devem ser armazenados em tres arquivos diferentes:
+
+jogos.json – cadastro dos jogos;
+clientes.json – cadastro dos clientes;
+locacoes.json – historico das locacoes.
+Ao iniciar o programa, os dados existentes nos arquivos JSON devem ser carregados.
+
+Sempre que um novo jogo, cliente ou locacao for cadastrado, os dados correspondentes devem ser atuali-
+zados no respectivo arquivo JSON.
+
+Sugestao de organizacao
+
+O projeto pode ser organizado da seguinte forma:
+
+locadora/
+
+├── main.py
+
+├── jogos.py
+
+├── clientes.py
+
+├── locacoes.py
+
+├── persistencia.py
+
+├── jogos.json
+
+├── clientes.json
+
+└── locacoes.json
+
+Desafio adicional: inclua no cadastro de cada jogo a quantidade de copias disponiveis. Uma locacao 
+somente podera ser realizada se houver pelo menos uma copia disponivel. Ao realizar a locacao, a quan-
+tidade disponivel devera ser reduzida em uma unidade.
+
+Responder com o endereco do repositorio github do projeto.
