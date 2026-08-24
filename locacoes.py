@@ -13,3 +13,54 @@ calcular_desconto(dias) → determina a porcentagem de desconto.
 calcular_valor_locacao(jogo, dias) → calcula o valor da locação e aplica o desconto.
 realizar_locacao(cliente, jogo, dias) → registra a locação.
 listar_locacoes() → mostra o histórico de locações.'''
+
+locacoes = []
+
+from jogos import jogos
+from clientes import cliente
+
+def calcular_desconto (dias):
+
+    if dias > 7:
+            return 0.05
+    elif dias > 3:
+        return 0.10
+    else:
+        return 0
+
+def calcular_valor_locacao (jogo, dias):
+
+    dias = int(input("Por quantos dias você deseja alugar o jogo? "))
+
+    valor_inicial = jogo['locacao_dia'] * dias
+
+    porcentual_desconto = calcular_desconto (dias)
+    valor_desconto = dias * calcular_desconto
+
+    total_venda = dias - valor_desconto
+
+#lembrete por: Jogo, Plataforma, Cliente, Quantidade de dias, Valor inicial, Desconto, Valor final
+
+    venda = {
+        "jogo": jogo['titulo'],
+        "plataforma": jogo['plataforma'],
+        "cliente": cliente['nome'],
+        "quantidade_dias": dias,
+        "valor_inicial": valor_inicial,
+        "desconto": porcentual_desconto,
+        "valor_final": total_venda
+    }
+
+    locacoes.append (venda)
+    return venda 
+
+def listar_locacoes (venda):
+
+    print("\n---NOTINHA---")
+    print(f"Jogo: {venda['jogo']}")
+    print(f"Plataforma {venda['plataforma']}")
+    print(f"Cliente: {venda['cliente']}")
+    print(f"Quantidade de dias: {venda['quantidade_dias']}")
+    print(f"Valor inicial: {venda['valor_inicial']:.2f}")
+    print(f"Desconto: {venda['desconto']:.2f}")
+    print(f"VALOR TOTAL: {venda['valor_final']:.2f}")

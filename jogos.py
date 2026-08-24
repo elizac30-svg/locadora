@@ -15,6 +15,10 @@ def cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia):
         "locacao_dia": locacao_dia
     }
 
+    jogos.append (jogo)
+    return jogo
+
+
 def listar_jogos(jogos):
     for jogo in jogos:
 
