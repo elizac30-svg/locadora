@@ -25,10 +25,11 @@ def menu():
         print("\n---MENU---")
         print("[1] - Cadastrar clientes.")
         print("[2] - Cadastrar jogos.")
-        print("[3] - Listar clientes.")
-        print("[4] - Listar jogos.")
-        print("[5] - Listar locações.")
-        print("[6] - Sair.")
+        print("[3] - Realizar locações.")
+        print("[4] - Listar clientes.")
+        print("[5] - Listar jogos.")
+        print("[6] - Listar locações.")
+        print("[7] - Sair.")
 
         opcao = input("Tecle a opção desejada: ")
 
@@ -36,7 +37,6 @@ def menu():
             nome = input("Nome do cliente: ")
             telefone = input("Telefone do cliente: ")
             cadastrar_cliente(nome, telefone)
-
 
         elif opcao == '2':
             titulo = input("Título do jogo: ")
@@ -48,15 +48,46 @@ def menu():
             cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia)
 
         elif opcao == '3':
-            listar_clientes(clientes)
+            titulo = input("Digite o título do jogo: ")
+            nome = input("Digite o nome do cliente: ")
+
+            jogo_encontrado = None
+            cliente_encontrado = None
+
+            for jogo in jogos:
+                if jogo['titulo'].lower() == titulo.lower():
+                    jogo_encontrado = jogo
+                    break
+
+            for cliente in clientes:
+                if cliente['nome'].lower() == nome.lower():
+                    cliente_encontrado = cliente
+                    break
+
+            if jogo_encontrado is None:
+                print("\n[Jogo não encontrado]")
+
+            elif cliente_encontrado is None:
+                print("\n[Cliente não encontrado]")
+
+            else:
+                dias = int(input("Por quantos dias você deseja alugar o jogo? "))
+
+                realizar_locacao(jogo_encontrado, dias, cliente_encontrado)
+                salvar_locacoes(locacoes)
+
+                print("\n[Locação realizada com sucesso!]")
 
         elif opcao == '4':
-            listar_jogos(jogos)
+            listar_clientes(clientes)
 
         elif opcao == '5':
-            listar_locacoes()
+            listar_jogos(jogos)
 
         elif opcao == '6':
+            listar_locacoes()
+
+        elif opcao == '7':
             break
 
         else:

@@ -13,12 +13,10 @@ def cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia):
         "titulo": titulo,
         "plataforma": plataforma,
         "genero": genero,
-        "valor": valor,
         "locacao_dia": locacao_dia
     }
 
     jogos.append (jogo)
-    time.sleep (1.5)
     return jogo
 
 
@@ -30,8 +28,9 @@ def listar_jogos(jogos):
         return
 
     for jogo in jogos:
-        print(f"Título: {jogo['titulo']}")
+        print(f"\nTítulo: {jogo['titulo']}")
         print(f"Plataforma: {jogo['plataforma']}")
         print(f"Gênero: {jogo['genero']}")
         print(f"Valor: {jogo['valor']}")
         print(f"Locação por dia: {jogo['locacao_dia']}")
+        time.sleep (1.5)

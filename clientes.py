@@ -13,7 +13,6 @@ def cadastrar_cliente (nome, telefone):
         "telefone": telefone
     }
     clientes.append (cliente)
-    time.sleep (1.5)
     return cliente
 
 def listar_clientes (clientes):
@@ -26,3 +25,4 @@ def listar_clientes (clientes):
         for cliente in clientes:
             print(f"Nome: {cliente['nome']}")
             print(f"Telefone: {cliente['telefone']}")
+            time.sleep (1.5)
