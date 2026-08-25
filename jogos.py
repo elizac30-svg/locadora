@@ -23,7 +23,7 @@ def cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia):
 def listar_jogos(jogos):
     
     if not jogos:
-        print("\n[Lista vazia]")
+        print("\n[Lista vazia] ")
         time.sleep (1.5)
         return
 
