@@ -18,7 +18,7 @@ def cadastrar_cliente (nome, telefone):
 def listar_clientes (clientes):
 
         if not clientes:
-            print("\n[Lista vazia]")
+            print("\n[Lista vazia ]")
             time.sleep (1.5)
             return
 
