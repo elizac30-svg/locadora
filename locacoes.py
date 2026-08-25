@@ -11,33 +11,32 @@ Acima de 7 dias → 10%.
 
 calcular_desconto(dias) → determina a porcentagem de desconto.
 calcular_valor_locacao(jogo, dias) → calcula o valor da locação e aplica o desconto.
-realizar_locacao(cliente, jogo, dias) → registra a locação.
 listar_locacoes() → mostra o histórico de locações.'''
 
-locacoes = []
-
 from jogos import jogos
-from clientes import cliente
+from clientes import clientes
+
+locacoes = []
 
 def calcular_desconto (dias):
 
     if dias > 7:
-            return 0.05
+            return 0.10
     elif dias > 3:
-        return 0.10
+        return 0.05
     else:
         return 0
 
-def calcular_valor_locacao (jogo, dias):
+def realizar_locacao (jogo, dias, cliente):
 
     dias = int(input("Por quantos dias você deseja alugar o jogo? "))
 
     valor_inicial = jogo['locacao_dia'] * dias
 
     porcentual_desconto = calcular_desconto (dias)
-    valor_desconto = dias * calcular_desconto
+    valor_desconto = valor_inicial * porcentual_desconto
 
-    total_venda = dias - valor_desconto
+    total_venda = valor_inicial - valor_desconto
 
 #lembrete por: Jogo, Plataforma, Cliente, Quantidade de dias, Valor inicial, Desconto, Valor final
 
@@ -54,13 +53,18 @@ def calcular_valor_locacao (jogo, dias):
     locacoes.append (venda)
     return venda 
 
-def listar_locacoes (venda):
+def listar_locacoes ():
 
-    print("\n---NOTINHA---")
-    print(f"Jogo: {venda['jogo']}")
-    print(f"Plataforma {venda['plataforma']}")
-    print(f"Cliente: {venda['cliente']}")
-    print(f"Quantidade de dias: {venda['quantidade_dias']}")
-    print(f"Valor inicial: {venda['valor_inicial']:.2f}")
-    print(f"Desconto: {venda['desconto']:.2f}")
-    print(f"VALOR TOTAL: {venda['valor_final']:.2f}")
+    if not locacoes:
+         print("[Lista vazia]")
+         return
+
+    for venda in locacoes:
+        print("\n---NOTINHA---")
+        print(f"Jogo: {venda['jogo']}")
+        print(f"Plataforma {venda['plataforma']}")
+        print(f"Cliente: {venda['cliente']}")
+        print(f"Quantidade de dias: {venda['quantidade_dias']}")
+        print(f"Valor inicial: {venda['valor_inicial']:.2f}")
+        print(f"Desconto: {venda['desconto']:.2f}")
+        print(f"VALOR TOTAL: {venda['valor_final']:.2f}")

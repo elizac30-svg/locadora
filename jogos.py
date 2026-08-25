@@ -20,8 +20,12 @@ def cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia):
 
 
 def listar_jogos(jogos):
-    for jogo in jogos:
+    
+    if not jogos:
+        print("[Lista vazia]")
+        return
 
+    for jogo in jogos:
         print(f"Título: {jogo['titulo']}")
         print(f"Plataforma: {jogo['plataforma']}")
         print(f"Gênero: {jogo['genero']}")

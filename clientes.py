@@ -14,7 +14,11 @@ def cadastrar_cliente (nome, telefone):
     return cliente
 
 def listar_clientes (clientes):
-    for cliente in clientes:
 
-        print(f"Nome: {cliente['nome']}")
-        print(f"Telefone: {cliente['telefone']}")
+        if not clientes:
+            print("[Lista vazia]")
+            return
+
+        for cliente in clientes:
+            print(f"Nome: {cliente['nome']}")
+            print(f"Telefone: {cliente['telefone']}")
