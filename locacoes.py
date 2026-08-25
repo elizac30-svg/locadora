@@ -54,7 +54,7 @@ def realizar_locacao(jogo, dias, cliente):
 def listar_locacoes ():
 
     if not locacoes:
-        print("\n[Lista vazia] ")
+        print("\n[Lista vazia]")
         time.sleep (1.5)
         return
 
