@@ -3,6 +3,8 @@
 Deve permitir cadastrar um cliente informando nome e telefone.
 Também deve permitir listar todos os clientes cadastrados. cadastrar_cliente e listar_clientes.''' 
 
+import time #só pra ficar bonitinho na execução
+
 clientes = []
 
 def cadastrar_cliente (nome, telefone):
@@ -11,12 +13,14 @@ def cadastrar_cliente (nome, telefone):
         "telefone": telefone
     }
     clientes.append (cliente)
+    time.sleep (1.5)
     return cliente
 
 def listar_clientes (clientes):
 
         if not clientes:
-            print("[Lista vazia]")
+            print("\n[Lista vazia]")
+            time.sleep (1.5)
             return
 
         for cliente in clientes:

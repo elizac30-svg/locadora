@@ -13,6 +13,8 @@ calcular_desconto(dias) → determina a porcentagem de desconto.
 calcular_valor_locacao(jogo, dias) → calcula o valor da locação e aplica o desconto.
 listar_locacoes() → mostra o histórico de locações.'''
 
+import time #só pra ficar bonitinho na execução
+
 from jogos import jogos
 from clientes import clientes
 
@@ -51,13 +53,16 @@ def realizar_locacao (jogo, dias, cliente):
     }
 
     locacoes.append (venda)
+    time.append (1.5)
     return venda 
 
 def listar_locacoes ():
 
     if not locacoes:
-         print("[Lista vazia]")
-         return
+        print("\n[Lista vazia]")
+        time.sleep (1.5)
+        return
+
 
     for venda in locacoes:
         print("\n---NOTINHA---")

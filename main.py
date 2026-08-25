@@ -7,6 +7,7 @@ Realizar locação
 Listar locações
 Sair'''
 
+
 from clientes import cadastrar_cliente, listar_clientes, clientes
 from jogos import cadastrar_jogo, listar_jogos, jogos
 from locacoes import realizar_locacao, listar_locacoes, locacoes

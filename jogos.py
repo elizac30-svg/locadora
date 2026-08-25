@@ -3,6 +3,8 @@
 Deve permitir cadastrar um jogo informando título, plataforma, gênero e valor da locação por dia.
 Também deve permitir listar todos os jogos cadastrados. cadastrar_jogo e listar_jogo.'''
 
+import time #só pra ficar bonitinho na execução
+
 jogos = []
 
 def cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia):
@@ -16,13 +18,15 @@ def cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia):
     }
 
     jogos.append (jogo)
+    time.sleep (1.5)
     return jogo
 
 
 def listar_jogos(jogos):
     
     if not jogos:
-        print("[Lista vazia]")
+        print("\n[Lista vazia]")
+        time.sleep (1.5)
         return
 
     for jogo in jogos:
