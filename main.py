@@ -38,6 +38,11 @@ def menu():
             telefone = input("Telefone do cliente: ")
             cadastrar_cliente(nome, telefone)
 
+            cadastrar_cliente(nome, telefone)
+            salvar_clientes(clientes)
+
+            print("\n[Cliente cadastrado com sucesso!]")
+
         elif opcao == '2':
             titulo = input("Título do jogo: ")
             plataforma = input("Plataforma: ")
@@ -46,6 +51,9 @@ def menu():
             locacao_dia = float(input("Valor da locação por dia: "))
 
             cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia)
+            salvar_jogos(jogos)
+
+            print("\n[Jogo cadastrado com sucesso!]")
 
         elif opcao == '3':
             titulo = input("Digite o título do jogo: ")
