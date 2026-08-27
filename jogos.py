@@ -7,7 +7,7 @@ import time #só pra ficar bonitinho na execução
 
 jogos = []
 
-def cadastrar_jogo(titulo, plataforma, genero, valor, locacao_dia):
+def cadastrar_jogo(titulo, plataforma, genero, locacao_dia):
 
     jogo = {
         "titulo": titulo,
@@ -31,6 +31,5 @@ def listar_jogos(jogos):
         print(f"\nTítulo: {jogo['titulo']}")
         print(f"Plataforma: {jogo['plataforma']}")
         print(f"Gênero: {jogo['genero']}")
-        print(f"Valor: {jogo['valor']}")
         print(f"Locação por dia: {jogo['locacao_dia']}")
         time.sleep (1.5)
